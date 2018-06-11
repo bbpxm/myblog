@@ -1,0 +1,53 @@
+{extends file="../Public/layout.html"} {block name=rightnav}
+<a href="admin.php">后台首页</a> >
+<a href="#">用户列表</a>
+{/block} {block name=main}
+
+<div class="lists">
+	<table class="table">
+		    <thead>
+		    	<tr>
+				<th>id</th>
+				<th>头像</th>
+				<th>用户名</th>
+				<th>性别</th>
+				<th>Email</th>
+				<th>注册时间</th>
+				<th>会员状态</th>				
+				<th>操作</th>
+				</tr>
+		    </thead>			
+			<tbody>
+			{foreach $userlist as $k=>$user}
+			<tr>
+				<td>{$user.id}</td>
+				<td><img src="" class="userface"/></td>
+				<td><a class="link" href="#">{$user.username}</a></td>
+				<td>{if $user.sex == 1}男{else}女{/if}</td>
+				<td>{$user.email}</td>
+				<td>{$user.reg_time}</td>
+				<td>{if $user.status}正常{else}禁言{/if}</td>				
+				<td>
+					<p>
+						<a href="#" class="btn btn-green">关禁闭</a>
+						<a href="#" class="btn btn-red">删除</a>
+					</p>
+				</td>
+			</tr>
+			{/foreach}
+		</tbody>
+         <tfoot>
+         	<tr>
+         		<td></td>
+         		<td colspan="7">
+         			{if $pager_open== 'true'}
+						<div class="panel">
+						  <div class="pager">{$pager}</div>
+						</div>  
+					{/if}
+         		</td>
+         	</tr>
+         </tfoot>
+	</table>
+</div>
+{/block}

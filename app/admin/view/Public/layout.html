@@ -1,0 +1,29 @@
+{include file="../Public/header.html"}
+<header>
+			<div class="admin-logo">
+				<h1>My Blog</h1>				
+			</div>
+			<div class="top">
+				<div class="top-nav">
+				<ul class="navlist">
+					<li class="nav"><a href="admin.php">首页</a></li>
+					<li class="nav"><a href="#">菜单一</a></li>
+					<li class="nav"><a href="#">菜单二</a></li>
+					<li class="nav"><a href="index.php" target="_blank">浏览前台</a></li>
+				</ul>
+			</div>
+			<div class="admin-zone">
+				{$smarty.session.admin_name}，欢迎回来！&nbsp;&nbsp;<a href="admin.php?c=admin&a=admin_out">退出</a>
+			</div>
+			</div>
+		</header>
+<div class="main">	
+	<div class="sidebar">{include file="../Public/left.html"}</div>
+	<div class="divider"></div>
+	<div class="rightmain">
+		<div class="rightnav">{block name=rightnav}标题栏	{/block}</div>
+	    <div class="rightcontent">{block name=main}右侧内容{/block}</div>
+		
+	</div>
+</div>
+{include file="../Public/foot.html"}

@@ -1,0 +1,85 @@
+{include file="../Public/header.html"}
+<div class="container">
+			<div class="main">
+				<div class="url_here">
+					当前位置:
+				</div>
+				<div class="leftPanel float-left">
+					<article class="panel mb-3">
+						<div class="title"><h1>{$article->title}</h1></div>
+						
+						<div class="articel_info">
+							<span>作者:<a href="#">{$article->author}</a></span>
+								<span>发表时间：{$article->pub_time}</span>
+								<span>阅读({$article->hit})</span>
+						</div>
+						<hr />
+						<div class="article_content mb-3">
+							<p class="text-center"><img src="{$article->top_img}" alt="" /></p>
+							{$article->content|nl2br}
+						</div>
+					
+					</article>
+					<div class="panel ">
+						<div class="box">
+							<div class="box_title">评论</div>
+							<div class="box_body">
+								<div class="commentPanel" name="#comments">
+									<form action="index.php?c=article&a=pub_comm" method="post">
+										<div class="form-group">
+											<label >用户名：</label>
+											{$smarty.session.username|default:'登录后发布评论'}
+										</div>
+										<div class="form-group">
+											<label style="vertical-align: top;">评论内容</label>
+											<textarea name="content" rows="5" cols="50"></textarea>
+										</div>
+										<div class="form-group">
+											<input type="hidden" name="artId" value="{$article->id}" />
+											<input type="hidden" name="userId" value="{$smarty.session.userid}" />
+											<input type="submit" value="提交评论" name="btnCom" class="btn btn-green btn-submit" />
+										</div>
+									</form>
+								</div>
+								<div class="panel">
+									<hr />
+									<ul class="commentsList">
+										{foreach $comments as $c}
+										  <li class="comment">
+											<div class="comment_user text-center"><span class="text-center"><img src="statics/images/face.png" class="thumb-user-face" /></span><br />{$c.username}</div>
+											<div class="comment_content">
+												<p class="mb-1">发表时间:{$c.comm_time}</p>
+											<p>{$c.comment_content|truncate:150:'...'}</p></div>											
+										</li>
+										{/foreach}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar float-right panel">
+					<div class="box ">
+						<div class="box_title"><span>阅读排行榜</span></div>
+						<div class="box_body">
+							<ul class="lists">
+							{foreach $hotlist as $hot}	
+								<li>•<a href="index.php?c=article&a=show&id={$hot.id}">{$hot.title|truncate:16:'...'}</a>({$hot.hit})</li>
+							{/foreach}
+							</ul>
+						</div>
+					</div>
+					<div class="box">
+						<div class="box_title"><span>最新文章</span></div>
+						<div class="box_body">
+							<ul class="lists">								
+								{foreach $newlist as $new}	
+								<li>•<a href="index.php?c=article&a=show&id={$new.id}">{$new.title|truncate:16:'...'}</a>({$new.hit})</li>
+							{/foreach}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{include file="../Public/foot.html"}

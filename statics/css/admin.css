@@ -1,0 +1,119 @@
+html,body{height:100%;overflow: hidden;}
+body {
+	font: 14px/1.5 "微软雅黑", arial;
+	background-color: #F2F2F2;
+	/*position: relative;*/
+	/*overflow: hidden;*/
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	position:fixed;
+	z-index: 999;
+	width:100%;
+	top:0;
+	height: 120px;
+	background-color: #555;
+	color: #FFF;
+}
+
+header a {color: #FFF;}
+.top{padding-left:270px;}
+.admin-logo{position:absolute;left:20px;top:30px}
+.admin-logo h1{color:rgba(255,255,255,.8)}
+.admin-zone{position:absolute;right:50px;top:30px;}
+.top-nav{position:absolute;bottom:3px;padding-left:30px;}
+.top-nav .nav{display:inline-block;background-color:rgba(240,240,240,.9)}
+.top-nav .nav a{display:block;color:#555;;padding:.5em 1em;font-size:16px;}
+.top-nav .nav a:hover{background-color:#FFF;}
+
+
+.main {padding-top:120px;background: #f0f0f0;padding-left: 270px;height:100%;overflow:hidden;}
+.main .divider{border-left:1px solid #cacaca;border-right:1px solid #FFF;;float:left;height:100%;}
+.main .sidebar {position:absolute;left:0;width:245px;height:auto;background:#909090;padding:15px 15px 20px 10px;}
+.main .sidebar ,.main .sidebar  a{color:#FFF;}
+.caption{font-size:16px;padding-bottom:15px;border-bottom:1px solid #666;padding-left:20px;}
+.sidebar .menu{padding-left:20px;border-top:1px solid #aaa;padding-top:15px;}
+.sidebar .menu dt{padding-left:1em;}
+.sidebar .menu dd a{display:block;padding-left:2em;padding-top:.5em;padding-bottom:.5em;}
+.sidebar .menu .nav i,.sidebar .menu .sub_nav i{font-style: normal;margin-right:3px;}
+
+.main .rightmain {height: 100%;padding-top:15px;padding-left:15px;padding-right:15px;}
+
+.rightmain .rightnav{border-bottom:1px solid #cacaca;padding-bottom:15px;font-size:16px;}
+.rightmain .rightcontent{background:#FFF;padding:15px;height:600px;overflow:scroll;}
+
+.table{/*border:1px solid #909090;*/border-collapse: collapse;width:100%;}
+.table thead tr{border-right:1px solid #008000;border-left:1px solid #008000;}
+.table thead th{padding:.6em;background:#008000;color:#FFF;border:1px solid #ddd;}
+.table tbody td,.table tfoot td{padding:.3em .5em;border:1px solid #999;border-top:none;}
+
+.lists .link:hover{color:#0000FF;text-decoration: underline;}
+
+/**
+ * icon样式
+ */
+.badge{display:inline-block;font-style: normal;font:12px/1 "宋体";padding:3px;border-radius: 4px;text-align: center;vertical-align: top;margin-top:7px;margin-right:5px}
+.badge.hot{background-color:rgba(255,0,0,1);color:#FFF;}
+.badge.new{background-color:rgba(108,157,23,1);color:#FFF;}
+
+
+
+/*分页颜色风格*/
+.pager .first,.pager .prev,.pager .next,.pager .last,
+.pager  .no{border:1px solid #6CA20F}
+.pager  .no:hover,.pager .no.current,
+.pager .first:hover,.pager .prev:hover,.pager .next:hover,.pager .last:hover
+{background-color:#6CA20F;color:#FFF;cursor: pointer;}
+.pager .first.dis,.pager .prev.dis,.pager .next.dis,
+.pager .last.dis{background-color:#eee;border-color:#eee;color:#b3b3b3;}
+
+
+.pager{padding:.5em 1em;text-align:center}
+.pager .pager-no{display:inline;}
+.pager .first,.pager .prev,.pager .next,.pager .last,
+.pager  .no{display:inline-block;padding:.25em .5em;margin-right:.5em;}
+.pager  .no>i{font-style:normal;}
+
+
+/*
+ * 按钮样式
+ */
+input.btn,button.btn{border:none;outline: none;;}
+.btn{display:inline-block;margin:.3em .5em;font-size:.7em;color:#FFF;padding:.3em 1em;border-radius: 5px;cursor: pointer;}
+
+.btn.btn-submit{width:30%;padding:.7em 1em;font-size:16px;}
+.btn.btn-red{background-color:#E84C4C;}
+.btn.btn-red:hover{background-color:#D14343}
+.btn.btn-green{background-color:#299C39;}
+.btn.btn-green:hover{background-color:#21832E}
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	/*display:none;*/
+	background: #000;
+	margin-top: 30px;
+}
+
+.copyright {
+	text-align: center;
+	color: #fff;
+	padding: 1em;
+}

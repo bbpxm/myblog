@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html,body{height:100%;overflow: hidden;}
+body {
+	font: 14px/1.5 "微软雅黑", arial;
+	background-color: #585858;
+    background:url(../images/abg.jpg) no-repeat;
+    background-size:cover;
+}
+
+
+.blog-logo{width:350px;height:150px;border:1px solid #fff;margin:0 auto;margin-top:100px;margin-bottom:30px;}
+.login-panel{border:1px solid rgba(255,255,255,.6);background-color:rgba(240,240,240,1);width:350px;height:400px;margin:220px auto 0 auto;box-shadow:#FFF 0 0 10px;}
+.login-panel form{margin:0 30px 0 30px;border-top:1px solid #fff;padding-top:2em;}
+.form-title{margin:0 30px 0 30px;border-bottom:1px solid #cacaca;font-size:1.6em;padding-top:1em;padding-bottom:1em;color:#666;text-align: center;color:#008000}
+.login-panel .form-title .logo{vertical-align: bottom;margin-right:15px;}
+.form-group{padding:5px 5px;}
+.form-group  label{display:inline-block;font-size:1.2em;min-width:80px;color:#666;vertical-align:top;}
+.textinput{width:170px;height:28px;font-size:16px;}
+.textinput.vcode{width:90px;}
+.imgcode{display:inline-block;vertical-align: top;cursor: pointer;}
+
+
+
+input.btn,button.btn{border:none;outline: none;;}
+.btn{display:inline-block;margin:.3em .5em;font-size:1.6em;color:#FFF;padding:.3em 1em;border-radius: 5px;cursor: pointer;}
+.btn.btn-submit{width:100%;padding:.7em 1.5em;font-size:1.4em;margin-top:20px;}
+.btn.btn-red{background-color:#E84C4C;}
+.btn.btn-red:hover{background-color:#D14343}
+.btn.btn-green{background-color:#299C39;}
+.btn.btn-green:hover{background-color:#21832E}
+footer{/*display:none;*//*position:fixed;*/bottom:0;width:100%;margin-top:30px;}
+.copyright{text-align: center;color:#fff;padding:1em;opacity: .5;}

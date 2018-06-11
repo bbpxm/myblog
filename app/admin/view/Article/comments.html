@@ -1,0 +1,54 @@
+{extends file="../Public/layout.html"} {block name=rightnav}
+<a href="admin.php">后台首页</a> >
+<a href="#">文章列表</a>
+{/block} {block name=main}
+
+<div class="lists">
+	<table class="table">
+		    <thead>
+		    	<tr>
+				<th>id</th>
+				<th>评论内容</th>
+				<th>评论文章</th>
+				<th>评论时间</th>
+				<th>评论IP</th>
+				<th>评论状态</th>
+				<th>用户名</th>
+				<th>操作</th>
+			</tr>
+		    </thead>			
+			<tbody>
+			{foreach $commentlist as $k=>$c}
+			<tr>
+				<td>{$c.id}</td>
+				<td>{$c.comment_content|truncate:30:'...'}</td>
+				<td><a class="link" href="index.php?c=article&a=show&id={$c.art_id}" target="_blank">{$c.title|truncate:50:'...'}</a></td>
+				<td>{$c.comm_time}</td>
+				<td>{$c.comm_ip}</td>
+				<td>1</td>
+				<td>{1}</td>
+				<td>
+					<p>
+						<a href="#" class="btn btn-green">回复</a>
+						<a href="#" class="btn btn-green">审核</a>
+						<a href="#" class="btn btn-red">删除</a>
+					</p>
+				</td>
+			</tr>
+			{/foreach}
+		</tbody>
+         <tfoot>
+         	<tr>
+         		<td></td>
+         		<td colspan="7">
+         			{if $pager_open}
+						<div class="panel">
+						  <div class="pager">{$pager}</div>
+						</div>  
+					{/if}
+         		</td>
+         	</tr>
+         </tfoot>
+	</table>
+</div>
+{/block}

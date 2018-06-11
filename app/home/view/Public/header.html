@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{block name=title}Blog{/block}</title>
+		<link rel="stylesheet" href="statics/css/home.css" />
+		<style>
+			.head{ background:#98AAB9 url(statics/images/banner-bg{$bgnum}.jpg) no-repeat ;background-size:cover;}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="head">
+				<div class="container">
+					<h1 class="sitelogo">My Blog</h1>
+					<div class="user_zone">
+						{if isset($smarty.session.userid)}
+						 <a href="index.php?c=user">{$smarty.session.username|default:''}</a>，欢迎回来！
+						 <a href="index.php?c=user&a=loginout">退出</a>
+						{else}
+						<a class="user_login_btn" href="index.php?c=user&a=login">登录</a>
+						<a class="user_login_btn" href="index.php?c=user&a=reg">注册</a>
+						{/if}
+					</div>
+				</div>
+			</div>
+			<div class="navbar">
+				<div class="container">
+					<ul class="nav">
+						<li class="active"><a href="index.php" class="nav-link">首页</a></li>
+						<li><a href="index.php?c=article" class="nav-link">所有博客</a></li>						
+						<li><a href="index.php?c=user" class="nav-link">用户中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
